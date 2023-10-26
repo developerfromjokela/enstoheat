@@ -1,6 +1,7 @@
 {
-  "domain": "enstogeat",
+  "domain": "enstoheat",
   "name": "Ensto Heat",
+  "version": "1.0.0",
   "codeowners": ["@developerfromjokela"],
   "config_flow": true,
   "bluetooth": [
