@@ -17,12 +17,11 @@ from homeassistant.const import CONF_ADDRESS
 from homeassistant.data_entry_flow import FlowResult
 
 
-from const import DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
 
-class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
+class ConfigFlow(config_entries.ConfigFlow, domain="enstoheat"):
     """Handle a config flow for Yale Access Bluetooth."""
 
     VERSION = 1
