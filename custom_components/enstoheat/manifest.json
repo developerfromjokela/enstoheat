@@ -1,0 +1,17 @@
+{
+  "domain": "enstogeat",
+  "name": "Ensto Heat",
+  "codeowners": ["@developerfromjokela"],
+  "config_flow": true,
+  "bluetooth": [
+    {
+      "manufacturer_id": 1576,
+      "manufacturer_data_start": [8, 1],
+      "service_uuid": "f49cefd5-209b-4531-99bd-89fe2909931a"
+    }
+  ],
+  "dependencies": ["bluetooth_adapters"],
+  "documentation": "https://www.home-assistant.io/integrations/led_ble",
+  "iot_class": "local_polling",
+  "requirements": ["bluetooth-data-tools==1.13.0", "bleak>=0.19.0", "async-timeout>=3.0.0", "bleak-retry-connector>=2.3.0"]
+}
