@@ -5,7 +5,7 @@ import logging
 from typing import Any
 
 from bluetooth_data_tools import human_readable_name
-from .helpers import EnstoThermostatLE
+from helpers import (EnstoThermostatLE)
 import voluptuous as vol
 
 from homeassistant import config_entries
@@ -17,7 +17,7 @@ from homeassistant.const import CONF_ADDRESS
 from homeassistant.data_entry_flow import FlowResult
 
 
-from .const import DOMAIN
+from const import DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
