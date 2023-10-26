@@ -128,6 +128,10 @@ class EnstoThermostatLE:
                 ble_device_callback=lambda: self._ble_device,
             )
             _LOGGER.debug("%s: Connected; RSSI: %s", self.name, self.rssi)
+            resolved = self._resolve_characteristics(client.services)
+            if not resolved:
+                # Try to handle services failing to load
+                resolved = self._resolve_characteristics(await client.get_services())
 
             self._client = client
             self._reset_disconnect_timer()
@@ -362,7 +366,7 @@ class EnstoThermostatLE:
 
     def _resolve_characteristics(self, services: BleakGATTServiceCollection) -> bool:
         """Resolve characteristics."""
-        if char := services.get_characteristic([READ_BOOST_CHARACTERISTIC_UUID]):
+        if char := services.get_characteristic(READ_BOOST_CHARACTERISTIC_UUID):
             self._read_char = char
         return bool(self._read_char)
 
