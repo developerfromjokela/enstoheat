@@ -17,9 +17,9 @@ from bleak_retry_connector import (
     retry_bluetooth_connection_error,
 )
 
-from .const import READ_BOOST_CHARACTERISTIC_UUID
+from const import READ_BOOST_CHARACTERISTIC_UUID
 from .exceptions import CharacteristicMissingError
-from .models import EnstoThermostatState
+from .dataclasses import EnstoThermostatState
 
 _LOGGER = logging.getLogger(__name__)
 
